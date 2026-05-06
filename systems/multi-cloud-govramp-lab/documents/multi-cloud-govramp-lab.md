@@ -1,11 +1,3 @@
----
-nextwork_uuid: 3c745f73-b8de-4458-bbf6-6e667f1b9e49
-original_filename: legendary-3c745f73-b8de-4458-bbf6-6e667f1b9e49.md
-migrated_to: government-systems-engineering/multi-cloud-govramp-lab.md
-migrated_at: 2026-05-04
-schema: nextwork-generator
----
-
 <img src="https://cdn.prod.website-files.com/677c400686e724409a5a7409/6790ad949cf622dc8dcd9fe4_nextwork-logo-leather.svg" alt="NextWork" width="300" />
 
 # Multi-Cloud GovRAMP Modernization Lab
