@@ -4,11 +4,11 @@
 
 ## Overview
 
-The environment setup establishes the execution layer for all subsequent steps.
+A reproducible state-government modernization lab that provisions a four-cluster Kubernetes platform across AWS, Azure, GCP, and on-prem, then governs it the way a public-sector authorization package expects: explicit system boundary, GitOps-controlled configuration baseline, and a Velero-backed continuity-of-operations (COOP) plan. The work is shaped around the GovRAMP framework and the federal expectation that scope, controls, and evidence are defined before workloads are deployed.
 
-WSL2 provides a Linux-compatible runtime for consistent tooling behavior. Cursor IDE acts as the development interface for authoring infrastructure and documentation, while CLI tools enable direct interaction with cloud providers and Kubernetes clusters. Authentication is configured across AWS, Azure, and GCP, and billing alerts are set to prevent uncontrolled cost growth during experimentation. This step ensures that all tools operate within a unified and repeatable environment.
+OpenTofu provisions each cloud independently with provider-scoped modules so the four-cluster boundary is loosely coupled but unified through a single kubeconfig. Argo CD runs from the on-prem hub as the control plane, enforcing an App-of-Apps deployment pattern that makes every change to the benefits portal traceable through Git history. Velero performs scheduled backups and validated cross-cluster restores, producing the kind of operational evidence a state authorizing official needs to sign an ATO.
 
-The architecture is built across **9 phases**, anchored by **The Mission: Modernizing State Government Infrastructure** on the input side and **Wrapping Up: Teardown and Cost Verification** at the end. Each phase is listed in the Implementation section below.
+The architecture below shows the system boundary: OpenTofu modules → four k3s clusters (AWS / Azure / GCP / on-prem hub) → Argo CD GitOps from hub → Velero backup-and-restore → GovRAMP control crosswalk → ATO-ready evidence package.
 
 ## Architecture
 
