@@ -4,9 +4,9 @@
 
 ## Overview
 
-This project establishes a FedRAMP-ready landing zone on Azure using Terraform, Azure Policy, and Prowler.
-
-The goal is to build a secure baseline aligned to NIST 800-53 controls, where compliance is enforced through infrastructure, not documentation.
+-T-h-i-s- -p-r-o-j-e-c-t- -e-s-t-a-b-l-i-s-h-e-s- -a- -F-e-d-R-A-M-P---r-e-a-d-y- -l-a-n-d-i-n-g- -z-o-n-e- -o-n- -A-z-u-r-e- -u-s-i-n-g- -T-e-r-r-a-f-o-r-m-,- -A-z-u-r-e- -P-o-l-i-c-y-,- -a-n-d- -P-r-o-w-l-e-r-.-
+-
+-T-h-e- -g-o-a-l- -i-s- -t-o- -b-u-i-l-d- -a- -s-e-c-u-r-e- -b-a-s-e-l-i-n-e- -a-l-i-g-n-e-d- -t-o- -N-I-S-T- -8-0-0---5-3- -c-o-n-t-r-o-l-s-,- -w-h-e-r-e- -c-o-m-p-l-i-a-n-c-e- -i-s- -e-n-f-o-r-c-e-d- -t-h-r-o-u-g-h- -i-n-f-r-a-s-t-r-u-c-t-u-r-e-,- -n-o-t- -d-o-c-u-m-e-n-t-a-t-i-o-n-.-
 
 The architecture is built across **7 phases**, anchored by **Setting Up the Compliance Toolkit** on the input side and **Wrapping Up: What Was Built and What Comes Next** at the end. Each phase is listed in the Implementation section below.
 
@@ -91,8 +91,8 @@ This system is built across **7 phases**:
 2. **Building the Azure Management Group Hierarchy**
 3. **Enabling Centralized Audit Logging**
 4. **Running the Prowler CIS Azure Benchmark Scan**
-5. **Mapping Findings to NIST 800-53 and Drafting the SSP**
-6. **Enforcing Encryption at Rest (SC-28)**
+5. **Mapping Findings to NIST 800-53 and Drafting the SSP**, -.
+6. **Enforcing Encryption at Rest (SC-28)**, -.
 7. **Wrapping Up: What Was Built and What Comes Next**
 
 For the full walkthrough with screenshots and step-by-step content, see [`documents/fedramp-landing-zone-azure.md`](./documents/fedramp-landing-zone-azure.md).
