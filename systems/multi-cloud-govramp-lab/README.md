@@ -95,7 +95,7 @@ This system is built across **9 phases**:
 5. **Implementing COOP Disaster Recovery with Velero**
 6. **Authoring the GovRAMP Crosswalk and Migration Wave Plan**
 7. **Quality Review and ATO Readiness Assessment**
-8. **Crossplane vs. OpenTofu Portability Comparison**, -.
+8. **Crossplane vs. OpenTofu Portability Comparison**
 9. **Wrapping Up: Teardown and Cost Verification**
 
 For the full walkthrough with screenshots and step-by-step content, see [`documents/multi-cloud-govramp-lab.md`](./documents/multi-cloud-govramp-lab.md).
