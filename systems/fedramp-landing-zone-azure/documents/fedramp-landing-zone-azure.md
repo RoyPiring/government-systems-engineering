@@ -131,7 +131,7 @@ This project took about 55 minutes. The main challenge was interpreting Prowler 
 
 ### Cleanup and next steps for federal cloud authorization work
 
-I did this project today to learn how to build a secure Azure landing zone using Terraform, Prowler, and Azure Policy, automating compliance checks and drafting security plans. Another skill I want to learn is cloud security architecture and designing robust, scalable, and compliant cloud environments.
+I did this project today to learn how to build a secure Azure landing zone using Terraform, Prowler, and Azure Policy, automating compliance checks and drafting security plans. Another skill I want to learn is cloud security architecture and designing compliant cloud environments that survive control failures and audit reviews.
 
 ---
 
