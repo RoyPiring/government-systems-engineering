@@ -1,6 +1,6 @@
 # Government Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-2-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--05--15-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-2-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--05--18-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *What works under federal regulatory scrutiny?*
 
@@ -21,9 +21,10 @@ Cloud, security, and platform engineering for the public sector and regulated en
 
 **What it isn't.** An operational ATO. A substitute for an Authorizing Official.
 
-## Systems
+## Featured Systems
 
-- **[FedRAMP Landing Zone on Azure](./systems/fedramp-landing-zone-azure/)**, FedRAMP · Azure · CIS · NIST
-- **[Multi-Cloud GovRAMP Modernization Lab](./systems/multi-cloud-govramp-lab/)**, Multi-Cloud · GovRAMP · OpenTofu · GitOps
+- **[FedRAMP Landing Zone on Azure](./systems/fedramp-landing-zone-azure/)**: Azure landing zone where NIST 800-53 controls land as Terraform policy not paperwork
+- **[Multi-Cloud GovRAMP Modernization Lab](./systems/multi-cloud-govramp-lab/)**: Four-cluster GovRAMP lab with cross-cluster DR drill and 60-control crosswalk to ATO evidence
+
 
 

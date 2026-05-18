@@ -1,0 +1,47 @@
+lens: government-systems-engineering
+featured_enabled: auto
+threshold: 1
+scored_at: '2026-05-18'
+human_pin: []
+systems:
+- slug: fedramp-landing-zone-azure
+  axis_scores:
+    technical_depth: 7
+    voice: 7
+    validation: 7
+  axis_reasoning:
+    technical_depth: Seven-phase Azure landing zone with real management group hierarchy,
+      three Azure Policy controls (CM-7, SC-7, SC-28), Prowler CIS scan, and CIS-to-NIST
+      800-53 crosswalk feeding an SSP; diagram names concrete components and data
+      flow but built in roughly 55 minutes.
+    voice: README line 'compliance is enforced through infrastructure, not documentation'
+      is on-brand and direct; supporting doc has duplicated heading line at phase
+      2 and some generic curriculum phrasing.
+    validation: All seven phases checked with screenshot anchors in the source doc
+      including Prowler results and crosswalk artifacts, but no recorded numeric pass/fail
+      counts or coverage percentages in prose.
+  average: 7.0
+  rationale: Azure landing zone where NIST 800-53 controls land as Terraform policy
+    not paperwork
+  featured: true
+- slug: multi-cloud-govramp-lab
+  axis_scores:
+    technical_depth: 9
+    voice: 8
+    validation: 8
+  axis_reasoning:
+    technical_depth: Four-cluster k3s system across AWS, Azure, GCP, and on-prem with
+      OpenTofu per-cloud modules, Argo CD App-of-Apps from the on-prem hub, Velero
+      cross-cluster DR drill with RTO/RPO measurement, 60-control GovRAMP crosswalk,
+      and a Crossplane vs OpenTofu paradigm comparison; diagram carries five subgraphs
+      with explicit edges.
+    voice: README names the federal expectation that 'scope, controls, and evidence
+      are defined before workloads are deployed' and the kubeconfig-as-unifier framing;
+      some interior doc sections retain NextWork curriculum cadence.
+    validation: Nine phases checked with strongest evidence at the cross-cluster DR
+      drill phase (RTO and RPO recorded against moderate-impact thresholds) and the
+      ATO readiness phase (remediation register for gap controls).
+  average: 8.3
+  rationale: Four-cluster GovRAMP lab with cross-cluster DR drill and 60-control crosswalk
+    to ATO evidence
+  featured: true
