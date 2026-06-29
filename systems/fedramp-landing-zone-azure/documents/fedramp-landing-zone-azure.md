@@ -113,11 +113,11 @@ Activity logging is framed as accountability, showing what actions occurred, whe
 
 ![Image](https://learn.nextwork.org/refreshed_maroon_timid_jujube/uploads/b9933a6a-1afe-46ed-bf22-c7119f6fcbed_kw7m3xpq)
 
-### Adding a third Azure Policy, re-running Prowler, and measuring improved control coverage
+### Adding a third Azure Policy, re-running Prowler, and measuring raised control coverage
 
 An additional policy enforces encryption at rest for storage resources.
 
-Re-running Prowler shows improved control coverage, confirming that policy enforcement directly impacts compliance posture.
+Re-running Prowler shows higher control coverage, confirming that policy enforcement directly impacts compliance posture.
 
 ## Wrapping Up: What Was Built and What Comes Next
 
