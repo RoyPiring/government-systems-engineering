@@ -147,7 +147,7 @@ Configuration manifests serve as the baseline for deployment, enabling consisten
 
 The system is evaluated for cross-environment consistency.
 
-The portability scorecard measures how easily workloads can move between clusters. Lower scores highlight gaps in enforcement, such as incomplete GitOps synchronization. Improvements focus on ensuring that all clusters maintain alignment with the declared state.
+The portability scorecard measures how easily workloads can move between clusters. Lower scores highlight gaps in enforcement, such as incomplete GitOps synchronization. Remediation focuses on ensuring that all clusters maintain alignment with the declared state.
 
 The system boundary diagram provides a visual representation of components, connections, and control layers, supporting both technical understanding and compliance documentation.
 

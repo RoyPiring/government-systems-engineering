@@ -71,7 +71,7 @@ flowchart LR
     Prowler -->|scans 160+ checks| Root
     Prowler -->|findings feed| Cross
     Cross -->|maps to controls| SSP
-    P3 -->|improves coverage in| Prowler
+    P3 -->|raises coverage in| Prowler
     class Logs datastore
     class Cursor,TF,Root,Plat,Work,Diag,Prowler service
     class P1,P2,P3 event
