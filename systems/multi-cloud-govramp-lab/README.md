@@ -73,9 +73,6 @@ flowchart LR
     CostGuard -- "guards spend" --> OpenTofu
     Crosswalk -- "maps artifacts to controls" --> ATOReview
     DRDrill -- "RTO / RPO evidence" --> Crosswalk
-class OpenTofu,ArgoCD,AWS,Azure,GCP,OnPrem,Velero service
-class WSL2,CLI,ATOReview io
-
     class BackupBucket,Crosswalk datastore
     class OpenTofu,ArgoCD,AWS,Azure,GCP,OnPrem,Velero service
     class AppOfApps,DRDrill,CostGuard event
@@ -102,7 +99,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/multi-cloud-govramp-lab.md`](./documents/multi-cloud-govramp-lab.md):
+Each build phase below is documented in [`documents/multi-cloud-govramp-lab.md`](./documents/multi-cloud-govramp-lab.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ The Mission: Modernizing State Government Infrastructure
 - ✅ Building the Lab Environment

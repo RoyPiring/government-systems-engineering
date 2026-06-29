@@ -72,9 +72,6 @@ flowchart LR
     Prowler -->|findings feed| Cross
     Cross -->|maps to controls| SSP
     P3 -->|improves coverage in| Prowler
-class Logs datastore
-class P1,P2,P3 event
-
     class Logs datastore
     class Cursor,TF,Root,Plat,Work,Diag,Prowler service
     class P1,P2,P3 event
@@ -99,7 +96,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/fedramp-landing-zone-azure.md`](./documents/fedramp-landing-zone-azure.md):
+Each build phase below is documented in [`documents/fedramp-landing-zone-azure.md`](./documents/fedramp-landing-zone-azure.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Setting Up the Compliance Toolkit
 - ✅ Building the Azure Management Group Hierarchy
