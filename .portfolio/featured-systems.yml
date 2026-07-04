@@ -1,7 +1,7 @@
 lens: government-systems-engineering
 featured_enabled: auto
 threshold: 1
-scored_at: '2026-05-18'
+scored_at: '2026-07-03'
 human_pin: []
 systems:
 - slug: fedramp-landing-zone-azure
@@ -23,6 +23,23 @@ systems:
   average: 7.0
   rationale: Azure landing zone where NIST 800-53 controls land as Terraform policy
     not paperwork
+  featured: true
+- slug: jwcc-multi-cloud-authorization
+  axis_scores:
+    technical_depth: 10
+    voice: 9
+    validation: 9
+  axis_reasoning:
+    technical_depth: Diagram names real CSP firewalls, Rego-to-SC control edges, capability
+      router fallback, and the failover re-inheritance loop as a reference-grade flow.
+    voice: Direct and specific, names the classification gap and the engineering-versus-authorization
+      failover distinction with no filler verbs.
+    validation: Portability phase links terraform plan outputs on two modules plus
+      the 4.67-min measured failover re-inheriting 107 controls, though most bars
+      point to phase prose not raw artifacts.
+  average: 9.33
+  rationale: Boundary-first multi-cloud authorization proving portability and a 4.67-min
+    failover
   featured: true
 - slug: multi-cloud-govramp-lab
   axis_scores:
