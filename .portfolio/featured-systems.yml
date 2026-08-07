@@ -1,7 +1,7 @@
 lens: government-systems-engineering
 featured_enabled: auto
 threshold: 1
-scored_at: '2026-07-03'
+scored_at: '2026-08-07'
 human_pin: []
 systems:
 - slug: fedramp-landing-zone-azure
@@ -61,4 +61,26 @@ systems:
   average: 8.3
   rationale: Four-cluster GovRAMP lab with cross-cluster DR drill and 60-control crosswalk
     to ATO evidence
+  featured: true
+- slug: closed-enclave-connection-authorization
+  axis_scores:
+    technical_depth: 9
+    voice: 9
+    validation: 8
+  axis_reasoning:
+    technical_depth: Federal enclave built categorize-first, NIST 800-53 Rev 5 OSCAL
+      tailored through CNSSI 1253 with FIPS 140-3 set as sc-13_prm_1, three separate
+      authorization boundaries, and a closed Terraform baseline with no internet or
+      NAT gateway, Transit Gateway isolation, Network Firewall, KMS, and SPIFFE/SPIRE,
+      gated by four policy-as-code scanners at zero violations.
+    voice: Direct and on-brand, 'a boundary that has never met a reviewer is a diagram'
+      and 'the connection is the system' carry the build, with the allow-by-exception
+      model stated plainly and no filler verbs.
+    validation: The injected cross-domain route is caught by the four-scanner gate,
+      remediated with an explicit blackhole, and closed as POAM-001 at 0 open items
+      with a clean re-scan, though the proof rests on scanner counts rather than a
+      live authorization.
+  average: 8.67
+  rationale: Closed SECRET enclave proving its boundary before it connects, an injected
+    cross-domain finding driven to zero violations
   featured: true

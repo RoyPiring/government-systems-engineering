@@ -1,6 +1,6 @@
 # Government Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-3-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--07--03-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-4-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--08--07-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *What works under federal regulatory scrutiny?*
 
@@ -26,6 +26,7 @@ Cloud, security, and platform engineering for the public sector and regulated en
 - **[FedRAMP Landing Zone on Azure](./systems/fedramp-landing-zone-azure/)**: Azure landing zone where NIST 800-53 controls land as Terraform policy not paperwork
 - **[Simulate a JWCC Multi-Cloud Authorization](./systems/jwcc-multi-cloud-authorization/)**: Boundary-first multi-cloud authorization proving portability and a 4.67-min failover
 - **[Multi-Cloud GovRAMP Modernization Lab](./systems/multi-cloud-govramp-lab/)**: Four-cluster GovRAMP lab with cross-cluster DR drill and 60-control crosswalk to ATO evidence
+- **[The Enclave That Could Not Connect](./systems/closed-enclave-connection-authorization/)**: Closed SECRET enclave proving its boundary before it connects, an injected cross-domain finding driven to zero violations
 
 
 
