@@ -1,7 +1,7 @@
 lens: government-systems-engineering
 featured_enabled: auto
 threshold: 1
-scored_at: '2026-08-07'
+scored_at: '2026-08-20'
 human_pin: []
 systems:
 - slug: fedramp-landing-zone-azure
@@ -83,4 +83,30 @@ systems:
   average: 8.67
   rationale: Closed SECRET enclave proving its boundary before it connects, an injected
     cross-domain finding driven to zero violations
+  featured: true
+- slug: zero-cost-federal-rehearsal-rig
+  axis_scores:
+    technical_depth: 8
+    voice: 9
+    validation: 8
+  axis_reasoning:
+    technical_depth: Three-namespace kind v0.32.0 cluster with Kustomize overlays per
+      zone, SeaweedFS master, volume, filer, and S3 running in all three, PostgreSQL
+      18 pinned with a migration_user and app_user split, and GitLab CE stages that
+      only ran once the runner network path to the cluster API was traced; deliberately
+      local, so it carries no federal cloud accounts, OSCAL artifacts, or control
+      tailoring the way its peers in this lens do.
+    voice: The build states its own limits harder than its results, which is the brand
+      itself; the rig 'must never be treated as proof of production readiness', Gap
+      5 names provisioning lead time as an organizational dependency rather than a
+      Kubernetes object that can be modeled in YAML, and a fast clean-clone is called
+      out as proving local setup speed only.
+    validation: A timed clean-clone from a fresh copy replaces an estimated setup
+      duration with an observed one, filer, master, S3, and volume deployments read
+      1/1 Ready across dev, int, and prod, and the object-arrival event is pinned to
+      concrete fields with oldEntry null; the S3 notification API gap is recorded
+      rather than papered over, though the evidence rests on readiness states rather
+      than numeric pass counts.
+  average: 8.33
+  rationale: Zero-cost local rehearsal of a federal delivery path, bounded by a fidelity map that names what it cannot prove
   featured: true
