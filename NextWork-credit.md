@@ -4,8 +4,11 @@ This portfolio repository was built from NextWork projects, created via NextWork
 
 **Original NextWork projects:**
 
+- The Enclave That Could Not Connect
 - FedRAMP Landing Zone on Azure
+- Simulate a JWCC Multi-Cloud Authorization
 - Multi-Cloud GovRAMP Modernization Lab
+- Zero-Cost Federal Platform Rehearsal Rig
 
 ## About NextWork
 
