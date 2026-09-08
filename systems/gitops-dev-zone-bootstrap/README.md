@@ -103,8 +103,8 @@ flowchart LR
     Dr002 -- "preserves" --> Histories
     Dr002 -- "bounded by" --> Dr002Reverse
     GitOpsRepo -- "contains" --> Base
-    Base -- "specialised by" --> DevOverlay
-    Base -- "specialised by" --> IntOverlay
+    Base -- "specialized by" --> DevOverlay
+    Base -- "specialized by" --> IntOverlay
     Base -- "declares" --> ReplicaOne
     DevOverlay -- "together with the base gives" --> Explicit
     Kind -- "hosts" --> ArgoCD

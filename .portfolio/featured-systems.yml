@@ -1,66 +1,50 @@
 lens: government-systems-engineering
 featured_enabled: auto
-threshold: 1
-scored_at: '2026-08-20'
+threshold: 6
+scored_at: '2026-09-07'
 human_pin: []
 systems:
-- slug: fedramp-landing-zone-azure
-  axis_scores:
-    technical_depth: 7
-    voice: 7
-    validation: 7
-  axis_reasoning:
-    technical_depth: Seven-phase Azure landing zone with real management group hierarchy,
-      three Azure Policy controls (CM-7, SC-7, SC-28), Prowler CIS scan, and CIS-to-NIST
-      800-53 crosswalk feeding an SSP; diagram names concrete components and data
-      flow but built in roughly 55 minutes.
-    voice: README line 'compliance is enforced through infrastructure, not documentation'
-      is on-brand and direct; supporting doc has duplicated heading line at phase
-      2 and some generic curriculum phrasing.
-    validation: All seven phases checked with screenshot anchors in the source doc
-      including Prowler results and crosswalk artifacts, but no recorded numeric pass/fail
-      counts or coverage percentages in prose.
-  average: 7.0
-  rationale: Azure landing zone where NIST 800-53 controls land as Terraform policy
-    not paperwork
-  featured: true
 - slug: jwcc-multi-cloud-authorization
   axis_scores:
     technical_depth: 10
     voice: 9
     validation: 9
   axis_reasoning:
-    technical_depth: Diagram names real CSP firewalls, Rego-to-SC control edges, capability
-      router fallback, and the failover re-inheritance loop as a reference-grade flow.
-    voice: Direct and specific, names the classification gap and the engineering-versus-authorization
-      failover distinction with no filler verbs.
-    validation: Portability phase links terraform plan outputs on two modules plus
-      the 4.67-min measured failover re-inheriting 107 controls, though most bars
-      point to phase prose not raw artifacts.
+    technical_depth: The 57-edge diagram names real CSP firewalls, Rego-to-SC control edges, the capability
+      router fallback, and the failover re-inheritance loop; four providers carry one boundary, four Rego
+      policies map to SC-7, SC-8, and SC-28, and the RPO and RTO targets (15 and 30 minutes) shape the
+      design rather than decorate it.
+    voice: Names the capability gap and the difference between an engineering failover and an authorization
+      failover with no hedging, and states plainly that a provider move re-inherits 107 controls and sends
+      the SSP back to the Authorizing Official.
+    validation: 'The failover phase is strongest: 4 minutes 40 seconds measured from gap declaration to
+      a working Azure plan against a 30-minute target, documented in capability-map/failover-proof.md,
+      with the RPO honestly labeled a 15-minute design target rather than a live lag measurement.'
   average: 9.33
-  rationale: Boundary-first multi-cloud authorization proving portability and a 4.67-min
-    failover
+  rationale: Boundary-first multi-cloud authorization proving portability and a 4.67-minute failover
   featured: true
-- slug: multi-cloud-govramp-lab
+- slug: gitops-dev-zone-bootstrap
   axis_scores:
-    technical_depth: 9
-    voice: 8
-    validation: 8
+    technical_depth: 8
+    voice: 9
+    validation: 9
   axis_reasoning:
-    technical_depth: Four-cluster k3s system across AWS, Azure, GCP, and on-prem with
-      OpenTofu per-cloud modules, Argo CD App-of-Apps from the on-prem hub, Velero
-      cross-cluster DR drill with RTO/RPO measurement, 60-control GovRAMP crosswalk,
-      and a Crossplane vs OpenTofu paradigm comparison; diagram carries five subgraphs
-      with explicit edges.
-    voice: README names the federal expectation that 'scope, controls, and evidence
-      are defined before workloads are deployed' and the kubeconfig-as-unifier framing;
-      some interior doc sections retain NextWork curriculum cadence.
-    validation: Nine phases checked with strongest evidence at the cross-cluster DR
-      drill phase (RTO and RPO recorded against moderate-impact thresholds) and the
-      ATO readiness phase (remediation register for gap controls).
-  average: 8.3
-  rationale: Four-cluster GovRAMP lab with cross-cluster DR drill and 60-control crosswalk
-    to ATO evidence
+    technical_depth: Kind cluster plus Argo CD with a deliberate two-repository split (DR-002, carrying
+      its own reversal condition), Kustomize base and per-zone overlays, an AppProject fence on both source
+      and destination, and a two-speed sync policy (DR-004); the 53-edge diagram carries the bootstrap-secret
+      rotation chain and the drift drill as first-class flow, though the workload is a single local nginx
+      Deployment with no federal control tailoring.
+    voice: 'Sharp and free of filler: detection and correction are named as separate capabilities, the
+      failed initial-password read is read as proof the credential is gone rather than proof access was
+      lost, and the two boundary-violation attempts are kept apart so an unreachable repository is never
+      reported as a blocked one.'
+    validation: 'The drift drill is the strongest phase and it is built as a controlled A/B: self-heal
+      off leaves 3/3 standing 30 seconds after OutOfSync, self-heal on returns 5 replicas to 1/1 in about
+      6 seconds with the result preserved in docs/drift-evidence.txt, and the AppProject phase adds a
+      negative test that separates a connectivity failure from a project refusal.'
+  average: 8.67
+  rationale: GitOps path proving drift detection and correction are separate, 5 replicas back to 1 in
+    6 seconds
   featured: true
 - slug: closed-enclave-connection-authorization
   axis_scores:
@@ -68,21 +52,20 @@ systems:
     voice: 9
     validation: 8
   axis_reasoning:
-    technical_depth: Federal enclave built categorize-first, NIST 800-53 Rev 5 OSCAL
-      tailored through CNSSI 1253 with FIPS 140-3 set as sc-13_prm_1, three separate
-      authorization boundaries, and a closed Terraform baseline with no internet or
-      NAT gateway, Transit Gateway isolation, Network Firewall, KMS, and SPIFFE/SPIRE,
-      gated by four policy-as-code scanners at zero violations.
-    voice: Direct and on-brand, 'a boundary that has never met a reviewer is a diagram'
-      and 'the connection is the system' carry the build, with the allow-by-exception
-      model stated plainly and no filler verbs.
-    validation: The injected cross-domain route is caught by the four-scanner gate,
-      remediated with an explicit blackhole, and closed as POAM-001 at 0 open items
-      with a clean re-scan, though the proof rests on scanner counts rather than a
-      live authorization.
+    technical_depth: NIST SP 800-53 Rev 5 OSCAL catalog tailored through CNSSI 1253 with FIPS 140-3 pinned
+      as sc-13_prm_1, three separate authorization boundaries, and a closed Terraform baseline with no
+      internet gateway or NAT, Transit Gateway blackhole routes, Network Firewall inspection, KMS, and
+      SPIFFE/SPIRE; the 34-edge diagram names each boundary and the path the injected route reopened.
+    voice: 'Direct and on brand throughout: the connection is treated as part of the system, the allow-by-exception
+      protocol set is stated plainly (TLS 1.3 on 443, gRPC/TLS on 8081), and no filler verbs appear in
+      the README or the source doc.'
+    validation: Strongest evidence sits in the injected-finding phase, where the cross-domain route is
+      caught by the four-scanner gate, remediated with an explicit blackhole and propagation left off,
+      and closed as POAM-001 at 0 open items on a clean re-scan; the proof rests on scanner counts rather
+      than a live authorization decision.
   average: 8.67
-  rationale: Closed SECRET enclave proving its boundary before it connects, an injected
-    cross-domain finding driven to zero violations
+  rationale: Closed SECRET enclave that proves its boundary before it connects, injected finding driven
+    to zero
   featured: true
 - slug: zero-cost-federal-rehearsal-rig
   axis_scores:
@@ -90,23 +73,58 @@ systems:
     voice: 9
     validation: 8
   axis_reasoning:
-    technical_depth: Three-namespace kind v0.32.0 cluster with Kustomize overlays per
-      zone, SeaweedFS master, volume, filer, and S3 running in all three, PostgreSQL
-      18 pinned with a migration_user and app_user split, and GitLab CE stages that
-      only ran once the runner network path to the cluster API was traced; deliberately
-      local, so it carries no federal cloud accounts, OSCAL artifacts, or control
-      tailoring the way its peers in this lens do.
-    voice: The build states its own limits harder than its results, which is the brand
-      itself; the rig 'must never be treated as proof of production readiness', Gap
-      5 names provisioning lead time as an organizational dependency rather than a
-      Kubernetes object that can be modeled in YAML, and a fast clean-clone is called
-      out as proving local setup speed only.
-    validation: A timed clean-clone from a fresh copy replaces an estimated setup
-      duration with an observed one, filer, master, S3, and volume deployments read
-      1/1 Ready across dev, int, and prod, and the object-arrival event is pinned to
-      concrete fields with oldEntry null; the S3 notification API gap is recorded
-      rather than papered over, though the evidence rests on readiness states rather
-      than numeric pass counts.
+    technical_depth: Three-namespace kind cluster with Kustomize overlays per zone, SeaweedFS master,
+      volume, filer, and S3 in all three, PostgreSQL 18 split into migration_user and app_user, and GitLab
+      CE stages that only ran once the runner network path to the cluster API was traced; the 47-edge
+      diagram is detailed, but the rig deliberately carries no federal accounts, OSCAL artifacts, or control
+      tailoring.
+    voice: 'States its own limits harder than its results, which is the brand itself: the rig must never
+      be treated as proof of production readiness, provisioning lead time is named as an organizational
+      dependency rather than a Kubernetes object, and a fast clean-clone is called out as proving local
+      setup speed only.'
+    validation: The release phase is strongest, replacing an estimated setup duration with a timed clean-clone
+      from a fresh copy; filer, master, S3, and volume read 1/1 Ready across dev, int, and prod, and the
+      object-arrival event is pinned to concrete fields with oldEntry null, though the evidence rests
+      on readiness states rather than pass counts.
   average: 8.33
-  rationale: Zero-cost local rehearsal of a federal delivery path, bounded by a fidelity map that names what it cannot prove
+  rationale: Zero-cost local rehearsal of a federal delivery path, bounded by a map of what it cannot
+    prove
   featured: true
+- slug: multi-cloud-govramp-lab
+  axis_scores:
+    technical_depth: 8
+    voice: 7
+    validation: 7
+  axis_reasoning:
+    technical_depth: Four k3s clusters across AWS, Azure, GCP, and an on-prem hub with per-cloud OpenTofu
+      modules, Argo CD App-of-Apps from the hub, a Velero cross-cluster restore, a 60-control GovRAMP
+      crosswalk, and a Crossplane versus OpenTofu comparison; the system is the broadest in the lens,
+      but the 19-edge diagram carries far less of it than the peers carry of theirs.
+    voice: The README is specific about scope, controls, and evidence coming before workloads, but the
+      source doc falls into a passive step-summary cadence (this step establishes, this confirms, this
+      demonstrates) that reads as curriculum rather than build notes.
+    validation: The ATO readiness phase is the strongest, with gaps routed to a remediation register and
+      the system called partially rather than fully compliant, but the DR drill reports its RTO and RPO
+      only as values well within thresholds, so the headline recovery evidence stays unquantified in prose.
+  average: 7.33
+  rationale: Four-cluster GovRAMP lab with a cross-cluster DR drill and a 60-control crosswalk
+  featured: true
+- slug: fedramp-landing-zone-azure
+  axis_scores:
+    technical_depth: 7
+    voice: 7
+    validation: 6
+  axis_reasoning:
+    technical_depth: Seven-phase Azure landing zone with a real management group hierarchy, three Azure
+      Policy assignments (CM-7, SC-7, SC-28), centralized activity-log diagnostics, a Prowler CIS scan,
+      and a CIS-to-NIST 800-53 crosswalk feeding an SSP; the diagram is the thinnest in the lens at 16
+      edges and stops at one flow per component.
+    voice: The README line that compliance is enforced through infrastructure, not documentation, is on
+      brand, but the source doc runs on third-person curriculum summary lines such as Prowler evaluates
+      the environment against the CIS Azure Benchmark.
+    validation: 'Every phase is screenshot-anchored, including the Prowler run and the SC-28 re-scan,
+      but no result is recorded numerically: coverage is described as higher after the third policy with
+      no pass/fail counts or percentages in prose, the thinnest evidence set of the six.'
+  average: 6.67
+  rationale: Azure landing zone where NIST 800-53 controls land as Terraform policy, not paperwork
+  featured: false

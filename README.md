@@ -21,13 +21,14 @@ Cloud, security, and platform engineering for the public sector and regulated en
 
 **What it isn't.** An operational ATO. A substitute for an Authorizing Official.
 
-## Systems
+## Featured Systems
 
-- **[FedRAMP Landing Zone on Azure](./systems/fedramp-landing-zone-azure/)**, FedRAMP · Azure · CIS · NIST
-- **[Multi-Cloud GovRAMP Modernization Lab](./systems/multi-cloud-govramp-lab/)**, Multi-Cloud · GovRAMP · OpenTofu · GitOps
-- **[Simulate a JWCC Multi-Cloud Authorization](./systems/jwcc-multi-cloud-authorization/)**, JWCC · Multi-Cloud · Cloud-Agnostic · IL5-Equivalent
-- **[The Enclave That Could Not Connect](./systems/closed-enclave-connection-authorization/)**, Committing to the Build
-- **[Zero-Cost Federal Platform Rehearsal Rig](./systems/zero-cost-federal-rehearsal-rig/)**, Zero-Cost · Three-Namespace · GitLab
-- **[GitOps Dev Zone Bootstrap with Argo CD](./systems/gitops-dev-zone-bootstrap/)**, GitOps · CD · Self-Heal · Two-Speed
+- **[Simulate a JWCC Multi-Cloud Authorization](./systems/jwcc-multi-cloud-authorization/)**: Boundary-first multi-cloud authorization proving portability and a 4.67-minute failover
+- **[GitOps Dev Zone Bootstrap with Argo CD](./systems/gitops-dev-zone-bootstrap/)**: GitOps path proving drift detection and correction are separate, 5 replicas back to 1 in 6 seconds
+- **[The Enclave That Could Not Connect](./systems/closed-enclave-connection-authorization/)**: Closed SECRET enclave that proves its boundary before it connects, injected finding driven to zero
+- **[Zero-Cost Federal Platform Rehearsal Rig](./systems/zero-cost-federal-rehearsal-rig/)**: Zero-cost local rehearsal of a federal delivery path, bounded by a map of what it cannot prove
+- **[Multi-Cloud GovRAMP Modernization Lab](./systems/multi-cloud-govramp-lab/)**: Four-cluster GovRAMP lab with a cross-cluster DR drill and a 60-control crosswalk
+
+_+ 1 other system in the full catalog: [`INDEX.md`](./INDEX.md)._
 
 
