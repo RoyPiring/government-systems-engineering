@@ -77,7 +77,7 @@ The baseline also fixed the effective comparison set. OpenSCAP evaluated 228 rul
 
 The baseline OpenSCAP scan reported 23 passing rules, 7 failing rules, 198 not-applicable rules, and 228 total evaluated rules. These values described the unhardened Ubuntu 22.04 container image.
 
-I calculated the effective denominator by subtracting the not-applicable count from the total evaluated count: 228 − 198 = 30. Those 30 rules were the checks the container scan could score under the selected profile.
+I calculated the effective denominator by subtracting the not-applicable count from the total evaluated count: 228 - 198 = 30. Those 30 rules were the checks the container scan could score under the selected profile.
 
 The 7 failures became the main hardening target, while the 23 passes showed which applicable rules already met the expected state. Keeping the denominator fixed was necessary for the BEFORE and AFTER comparison. A lower failure count would not prove progress if the later scan had evaluated a different applicable set. By retaining the same 30-rule denominator, the pipeline could connect changes in pass and fail counts to remediation rather than a changed scope.
 
