@@ -8,8 +8,9 @@ Cloud systems engineered for federal-grade security and compliance.
 
 | # | System | Onboarded | Last updated | What it does |
 |--:|---|---|---|---|
-| 1 | [FedRAMP Landing Zone on Azure](./systems/fedramp-landing-zone-azure/) | 2026-05-06 | 2026-05-14 | FedRAMP · Azure · CIS · NIST |
-| 2 | [Multi-Cloud GovRAMP Modernization Lab](./systems/multi-cloud-govramp-lab/) | 2026-05-06 | 2026-05-11 | Multi-Cloud · GovRAMP · OpenTofu · GitOps |
-| 3 | [Simulate a JWCC Multi-Cloud Authorization](./systems/jwcc-multi-cloud-authorization/) | 2026-07-03 | 2026-07-03 | JWCC · RMF · IL5 · OSCAL |
-| 4 | [The Enclave That Could Not Connect](./systems/closed-enclave-connection-authorization/) | 2026-08-07 | 2026-08-07 | SECRET Enclave · OSCAL · CNSSI 1253 · ATO |
-| 5 | [Zero-Cost Federal Platform Rehearsal Rig](./systems/zero-cost-federal-rehearsal-rig/) | 2026-08-20 | 2026-08-20 | kind · Kustomize · GitLab CI · Fidelity Map |
+| 1 | [FedRAMP Landing Zone on Azure](./systems/fedramp-landing-zone-azure/) | 2026-05-06 | 2026-06-29 | FedRAMP · Azure · CIS · NIST |
+| 2 | [Multi-Cloud GovRAMP Modernization Lab](./systems/multi-cloud-govramp-lab/) | 2026-05-06 | 2026-06-29 | Multi-Cloud · GovRAMP · OpenTofu · GitOps |
+| 3 | [Simulate a JWCC Multi-Cloud Authorization](./systems/jwcc-multi-cloud-authorization/) | 2026-07-03 | 2026-07-03 | JWCC · Multi-Cloud · Cloud-Agnostic · IL5-Equivalent |
+| 4 | [The Enclave That Could Not Connect](./systems/closed-enclave-connection-authorization/) | 2026-08-07 | 2026-08-07 | Committing to the Build |
+| 5 | [Zero-Cost Federal Platform Rehearsal Rig](./systems/zero-cost-federal-rehearsal-rig/) | 2026-08-20 | 2026-08-20 | Zero-Cost · Three-Namespace · GitLab |
+| 6 | [GitOps Dev Zone Bootstrap with Argo CD](./systems/gitops-dev-zone-bootstrap/) | 2026-09-07 | 2026-09-07 | GitOps · CD · Self-Heal · Two-Speed |
