@@ -1,7 +1,7 @@
 lens: government-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-09-07'
+scored_at: '2026-09-08'
 human_pin: []
 systems:
 - slug: jwcc-multi-cloud-authorization
@@ -90,6 +90,33 @@ systems:
   rationale: Zero-cost local rehearsal of a federal delivery path, bounded by a map of what it cannot
     prove
   featured: true
+- slug: container-hardening-pipeline
+  axis_scores:
+    technical_depth: 7
+    voice: 9
+    validation: 8
+  axis_reasoning:
+    technical_depth: 'The 51-edge diagram is the second densest in the lens and it teaches rather than
+      decorates: it carries the four ADRs, the ComplianceAsCode fidelity limit, the 228-less-198 denominator
+      arithmetic, and the handover drill that did not pass as first-class nodes. The system itself is
+      narrower than the peers scored at 8: one Ubuntu 22.04 image through one GitHub Actions workflow
+      with OpenSCAP, Ansible, and Trivy on WSL2, a roughly 90-minute build with no distributed components,
+      no authorization boundary, and no control tailoring.'
+    voice: 'States its own limits harder than its results and ships a phase that failed: ADR-001 records
+      that community-maintained profiles are not an assessment of record with DISA content or the SCC
+      scanner, a green run is scoped to this image passing these declared controls at this moment, and
+      the handover section opens by saying no second person completed the test rather than dressing the
+      gap up. First person carries ownership throughout, with only mild third-person summary cadence in
+      the middle sections.'
+    validation: 'The BEFORE and AFTER phase carries the most disciplined arithmetic in the lens: 228 evaluated
+      less 198 not applicable fixes a 30-rule denominator, 7 failures fall to 1 and 23 passes rise to
+      29, and both sides reconcile to 30 so the reduction is attributable to remediation rather than a
+      changed scope. Two holes hold it below the 9s: Trivy is named as a required gate six times but no
+      vulnerability finding is ever reported, and no evidence artifact is named by path the way the failover
+      proof and drift evidence files are in the peer systems.'
+  average: 8.0
+  rationale: Container hardening where a fixed 30-rule denominator makes the 7-to-1 reduction attributable
+  featured: true
 - slug: multi-cloud-govramp-lab
   axis_scores:
     technical_depth: 8
@@ -108,7 +135,7 @@ systems:
       only as values well within thresholds, so the headline recovery evidence stays unquantified in prose.
   average: 7.33
   rationale: Four-cluster GovRAMP lab with a cross-cluster DR drill and a 60-control crosswalk
-  featured: true
+  featured: false
 - slug: fedramp-landing-zone-azure
   axis_scores:
     technical_depth: 7

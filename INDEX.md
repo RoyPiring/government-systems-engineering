@@ -14,3 +14,4 @@ Cloud systems engineered for federal-grade security and compliance.
 | 4 | [The Enclave That Could Not Connect](./systems/closed-enclave-connection-authorization/) | 2026-08-07 | 2026-08-07 | Committing to the Build |
 | 5 | [Zero-Cost Federal Platform Rehearsal Rig](./systems/zero-cost-federal-rehearsal-rig/) | 2026-08-20 | 2026-08-20 | Zero-Cost · Three-Namespace · GitLab |
 | 6 | [GitOps Dev Zone Bootstrap with Argo CD](./systems/gitops-dev-zone-bootstrap/) | 2026-09-07 | 2026-09-07 | GitOps · CD · Self-Heal · Two-Speed |
+| 7 | [Container Hardening Compliance Pipeline](./systems/container-hardening-pipeline/) | 2026-09-08 | 2026-09-08 | BEFORE · Dual-Gate |

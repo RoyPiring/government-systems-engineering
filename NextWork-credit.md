@@ -5,6 +5,7 @@ This portfolio repository was built from NextWork projects, created via NextWork
 **Original NextWork projects:**
 
 - The Enclave That Could Not Connect
+- Container Hardening Compliance Pipeline
 - FedRAMP Landing Zone on Azure
 - GitOps Dev Zone Bootstrap with Argo CD
 - Simulate a JWCC Multi-Cloud Authorization
