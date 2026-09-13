@@ -1,7 +1,7 @@
 lens: government-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-09-08'
+scored_at: '2026-09-12'
 human_pin: []
 systems:
 - slug: jwcc-multi-cloud-authorization
@@ -90,6 +90,46 @@ systems:
   rationale: Zero-cost local rehearsal of a federal delivery path, bounded by a map of what it cannot
     prove
   featured: true
+- slug: cdc-consumer-correctness-harness
+  axis_scores:
+    technical_depth: 7
+    voice: 9
+    validation: 8
+  axis_reasoning:
+    technical_depth: 'The 55-edge diagram is the second densest in the lens after the 57-edge JWCC map
+      and it teaches rather than decorates: the two wrong consumers, the two guard assertions, the replay,
+      the independent DuckDB verifier, and the structural-versus-regression split are all first-class
+      nodes, and the lexicographic ordering defect that makes the upsert fail is drawn as an edge. The
+      system itself sits with container-hardening rather than the peers scored at 8: a single-host harness
+      of one deterministic generator, three Python consumers, one PostgreSQL 18 target, and one DuckDB
+      verifier, a roughly 60-minute build with no distributed components, no authorization boundary, and
+      no control tailoring; the NIST SP 800-47 interconnection checklist is an annex the doc itself says
+      does not prove compliance, and streaming concerns (late, repeated, out-of-order events, checkpoints)
+      are named as future work.'
+    voice: 'First person carries ownership at the highest density in the lens (29 uses of I across 2,262
+      words) and limits are stated harder than results throughout: passing count and checksum showed the
+      consumer reached the expected state for this fixture and did not establish correctness for every
+      schema, order, or production feed; the real CDF check was narrow; the harness proved its declared
+      cases, not every CDC architecture. The hardest-part section names the exact discipline (a claim
+      about consumer logic versus a claim about one dated execution) instead of a tooling anecdote. No
+      banned verbs and no dash-family characters appear in the README or the source doc. Held below 10
+      by five What this step accomplishes scaffold headings, a curriculum marker no peer carries, and
+      one generic paragraph in the stack phase about consistent delivery structure.'
+    validation: 'The wrong-consumers phase is the strongest and it is built as a controlled comparison
+      against one fixed seeded fixture: the append consumer lands 2,120 rows against an expected 80 so
+      the count catches it, the upsert consumer lands exactly 80 keys so the count reports MATCH and only
+      the SHA-256 checksum over canonical rows fails, and the correct consumer then passes both measurements
+      and holds them after a replay of the same feed, with a ValueError guard on unknown change types
+      and a removed equals expected-preimage-count guard on the filter. The release phase adds a real
+      Delta-rs Change Data Feed shape check that confirms _change_type, _commit_version, _commit_timestamp
+      and the underscore vocabulary while stating it proves interface shape only. The same holes the prior
+      pass named on container-hardening hold it below the 9s: no evidence artifact is named by path the
+      way docs/drift-evidence.txt and capability-map/failover-proof.md are in the peers, no digest value
+      is shown, the number of stale values inside the upsert''s 80 keys is left at several, and the CI
+      checks added at release are never named.'
+  average: 8.0
+  rationale: CDC harness where a matching row count hides stale values and only the SHA-256 checksum fails
+  featured: true
 - slug: container-hardening-pipeline
   axis_scores:
     technical_depth: 7
@@ -116,7 +156,7 @@ systems:
       proof and drift evidence files are in the peer systems.'
   average: 8.0
   rationale: Container hardening where a fixed 30-rule denominator makes the 7-to-1 reduction attributable
-  featured: true
+  featured: false
 - slug: multi-cloud-govramp-lab
   axis_scores:
     technical_depth: 8

@@ -1,6 +1,6 @@
 # Government Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-7-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--09--08-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-8-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--09--12-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *What works under federal regulatory scrutiny?*
 
@@ -27,8 +27,8 @@ Cloud, security, and platform engineering for the public sector and regulated en
 - **[GitOps Dev Zone Bootstrap with Argo CD](./systems/gitops-dev-zone-bootstrap/)**: GitOps path proving drift detection and correction are separate, 5 replicas back to 1 in 6 seconds
 - **[The Enclave That Could Not Connect](./systems/closed-enclave-connection-authorization/)**: Closed SECRET enclave that proves its boundary before it connects, injected finding driven to zero
 - **[Zero-Cost Federal Platform Rehearsal Rig](./systems/zero-cost-federal-rehearsal-rig/)**: Zero-cost local rehearsal of a federal delivery path, bounded by a map of what it cannot prove
-- **[Container Hardening Compliance Pipeline](./systems/container-hardening-pipeline/)**: Container hardening where a fixed 30-rule denominator makes the 7-to-1 reduction attributable
+- **[CDC Consumer Correctness Harness](./systems/cdc-consumer-correctness-harness/)**: CDC harness where a matching row count hides stale values and only the SHA-256 checksum fails
 
-_+ 2 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
+_+ 3 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
 
 

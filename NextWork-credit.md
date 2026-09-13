@@ -4,6 +4,7 @@ This portfolio repository was built from NextWork projects, created via NextWork
 
 **Original NextWork projects:**
 
+- CDC Consumer Correctness Harness
 - The Enclave That Could Not Connect
 - Container Hardening Compliance Pipeline
 - FedRAMP Landing Zone on Azure
