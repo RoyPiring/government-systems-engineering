@@ -16,3 +16,4 @@ Cloud systems engineered for federal-grade security and compliance.
 | 6 | [GitOps Dev Zone Bootstrap with Argo CD](./systems/gitops-dev-zone-bootstrap/) | 2026-09-07 | 2026-09-07 | GitOps · CD · Self-Heal · Two-Speed |
 | 7 | [Container Hardening Compliance Pipeline](./systems/container-hardening-pipeline/) | 2026-09-08 | 2026-09-08 | BEFORE · Dual-Gate |
 | 8 | [CDC Consumer Correctness Harness](./systems/cdc-consumer-correctness-harness/) | 2026-09-12 | 2026-09-12 | Proving That the Wrong Answer Can Look Right |
+| 9 | [Compliance Evidence Bundle Pipeline](./systems/compliance-evidence-bundle/) | 2026-09-13 | 2026-09-13 | Contract-Enforced · Content-Addressed |

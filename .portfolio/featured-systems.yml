@@ -1,7 +1,7 @@
 lens: government-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-09-12'
+scored_at: '2026-09-13'
 human_pin: []
 systems:
 - slug: jwcc-multi-cloud-authorization
@@ -90,6 +90,56 @@ systems:
   rationale: Zero-cost local rehearsal of a federal delivery path, bounded by a map of what it cannot
     prove
   featured: true
+- slug: compliance-evidence-bundle
+  axis_scores:
+    technical_depth: 7
+    voice: 9
+    validation: 8
+  axis_reasoning:
+    technical_depth: 'The 52-edge diagram sits fourth in the lens by density, behind the 57-edge JWCC
+      map, the 55-edge CDC harness, and the 53-edge GitOps bootstrap, and it teaches rather than decorates:
+      the contract committed before any artifact, the meaning of STUBBED, the predicted-outcome rule for
+      each negative test, the restore-then-rerun step that separates a contract refusal from a broken
+      publisher, the two SHA-256 keys in the store, and the cold read reported as compromised are all
+      first-class nodes. The system itself belongs with the CDC harness and container hardening at 7 rather
+      than with the peers at 8: one Windows workstation running Syft, Grype, cosign, a local SeaweedFS,
+      and Python glue for schema validation, digest calculation, publication, and retrieval, a roughly
+      60-minute build with no cluster, no control plane, no authorization boundary, and no control tailoring.
+      Two of the six slots (hardening-check and control-map) ship STUBBED, the cosign provenance material
+      is never described beyond its slot name, and no decision record carries a reversal condition the
+      way DR-002 and ADR-001 do in the systems scored 8.'
+    voice: 'First person carries ownership at the second highest density in the lens (26 uses of I across
+      2,159 words, behind only the CDC harness) and every subsection closes on what the result did not
+      prove: Git history is evidence of sequence and not proof of integrity because a repository owner
+      can rewrite commits and dates, STUBBED means neither failed nor passed nor waived, retrieval proves
+      nothing about replication, retention, or an administrator who can delete objects, and the acceptance
+      test is reported as too close to count as independent review. Headings are specific rather than
+      scaffold (Why the first bundle''s digest is the stronger claim; What three publish runs together
+      prove about the contract), with none of the What this step accomplishes markers the CDC harness
+      carries, and the hardest-part section names a discipline (documenting reader proximity honestly
+      while keeping the proven value clear) instead of a tooling anecdote. No banned verbs and no dash-family
+      characters appear in the README or the source doc. Held below 10 by the toolchain and reflections
+      sections, which restate the tool inventory in curriculum cadence, and by one curriculum word choice
+      (the citer) in the acceptance phase.'
+    validation: 'The publish gate phase is the strongest and it is built as a predicted-then-observed
+      sequence: two negative runs (a required file removed while its slot stays named in the manifest,
+      then schema and digest expectations broken) each carry an outcome written before the run, the gate
+      stops before upload and mints no key, and a third run after restoring the original files prints
+      [PUBLISHED] with the full SHA-256 digest 0215a0fe7efdf0057c020e860d3eb4c9dcf3b20a5d1eb0bb1f1b33735059db04,
+      which is the kind of concrete artifact value the CDC and container-hardening passes were held for
+      lacking. The storage phase adds a second published bundle, two distinct keys in the store, and a
+      retriever that fetches the older key after the workspace was overwritten, recomputes the digest,
+      and matches it, with SeaweedFS health pinned to HTTP 200 on localhost:8333 after four recorded failed
+      starts. The manifest reads 4 READY and 2 STUBBED with the stubs named (linux-ci-pipeline-run-001,
+      control-map-population-001). Held below the 9s by the same shape of holes the prior pass named on
+      the peers at 8: no evidence artifact is named by path the way docs/drift-evidence.txt and capability-map/failover-proof.md
+      are, the Grype scan never reports a finding count, the Syft inventory size and the cosign provenance
+      content are never stated, the second bundle''s digest is not shown, the control questions are never
+      listed or counted, and the cold-read acceptance test is reported by the doc itself as compromised
+      by reader proximity.'
+  average: 8.0
+  rationale: Contract-first evidence bundle, publish gate proven to refuse, two stubbed slots kept visible
+  featured: true
 - slug: cdc-consumer-correctness-harness
   axis_scores:
     technical_depth: 7
@@ -129,19 +179,19 @@ systems:
       checks added at release are never named.'
   average: 8.0
   rationale: CDC harness where a matching row count hides stale values and only the SHA-256 checksum fails
-  featured: true
+  featured: false
 - slug: container-hardening-pipeline
   axis_scores:
     technical_depth: 7
     voice: 9
     validation: 8
   axis_reasoning:
-    technical_depth: 'The 51-edge diagram is the second densest in the lens and it teaches rather than
-      decorates: it carries the four ADRs, the ComplianceAsCode fidelity limit, the 228-less-198 denominator
-      arithmetic, and the handover drill that did not pass as first-class nodes. The system itself is
-      narrower than the peers scored at 8: one Ubuntu 22.04 image through one GitHub Actions workflow
-      with OpenSCAP, Ansible, and Trivy on WSL2, a roughly 90-minute build with no distributed components,
-      no authorization boundary, and no control tailoring.'
+    technical_depth: 'The 51-edge diagram is among the five densest in the lens and it teaches rather
+      than decorates: it carries the four ADRs, the ComplianceAsCode fidelity limit, the 228-less-198
+      denominator arithmetic, and the handover drill that did not pass as first-class nodes. The system
+      itself is narrower than the peers scored at 8: one Ubuntu 22.04 image through one GitHub Actions
+      workflow with OpenSCAP, Ansible, and Trivy on WSL2, a roughly 90-minute build with no distributed
+      components, no authorization boundary, and no control tailoring.'
     voice: 'States its own limits harder than its results and ships a phase that failed: ADR-001 records
       that community-maintained profiles are not an assessment of record with DISA content or the SCC
       scanner, a green run is scoped to this image passing these declared controls at this moment, and
@@ -191,7 +241,7 @@ systems:
       the environment against the CIS Azure Benchmark.
     validation: 'Every phase is screenshot-anchored, including the Prowler run and the SC-28 re-scan,
       but no result is recorded numerically: coverage is described as higher after the third policy with
-      no pass/fail counts or percentages in prose, the thinnest evidence set of the six.'
+      no pass/fail counts or percentages in prose, the thinnest evidence set in the lens.'
   average: 6.67
   rationale: Azure landing zone where NIST 800-53 controls land as Terraform policy, not paperwork
   featured: false
