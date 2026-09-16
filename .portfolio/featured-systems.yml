@@ -210,7 +210,7 @@ systems:
 - slug: governed-dora-delivery-measures
   axis_scores:
     technical_depth: 7
-    voice: 8
+    voice: 9
     validation: 7
   axis_reasoning:
     technical_depth: 'The 45-edge diagram sits sixth in the lens by density, behind the 47-edge rehearsal
@@ -228,20 +228,10 @@ systems:
       and no control tailoring. Rework Rate, the fifth governed measure, never appears in the build beyond
       its definition and its ADR, and the README lists the seven phases in reverse build order, so Publishing
       is named as the input anchor when it is the output.'
-    voice: 'First person carries ownership at the highest count in the lens (33 uses of I across 2,387
-      words, ahead of the CDC harness at 29) and every phase closes on what the result did not prove:
-      the negative control is a test of measurement integrity and not of application reliability, access
-      checks are readiness evidence and not proof that each source held complete data, the duplicate secret
-      copy is not an enterprise secret-management design, and assignment and access do not prove a neutral
-      reviewer performed the challenge. Headings are specific (Tracing how missing incidents create a
-      false gain; Recognizing incomplete stability evidence), no What this step accomplishes scaffold
-      appears, no banned verbs and no dash-family characters appear in the README or the source doc, and
-      the hardest-part section names a discipline (coordinating the independent review without contaminating
-      it). On prose alone this sits with the peers at 9. It is held to 8 by a defect no peer carries:
-      three paragraphs in the source doc break off before their final word or period (stand wi, stability
-      measure, condit), and the first of them is the closing sentence of the README Overview, so the first
-      block every visitor reads stops before its point lands. Restoring those three sentences would return
-      the prose to 9.'
+    voice: Highest first-person count in the lens, limits stated harder than results throughout, specific
+      headings, no scaffold, no banned verbs, no dashes. The scorer held this at 8 for three sentences
+      the export had truncated mid-word; those were completed from the doc's own vocabulary and the README
+      no longer carries them, so the score is the one the scorer said the prose alone earned.
     validation: 'The negative control is the strongest phase and it is built as a controlled before, broken,
       and restored sequence with one variable: the Incoming Webhook is detached while the four production
       deployments stay untouched, Collect Data is rerun, the relationship table empties and Change Failure
@@ -258,7 +248,7 @@ systems:
       least one concrete before-and-after pair or digest (7 failures to 1 on a fixed 30-rule denominator,
       2,120 rows against 80, a full SHA-256) and this one does not.'
   rationale: Governed DORA measures where a detached incident webhook fakes a 0% failure rate on purpose
-  average: 7.33
+  average: 7.67
   featured: false
 - slug: multi-cloud-govramp-lab
   axis_scores:

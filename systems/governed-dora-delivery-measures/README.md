@@ -4,11 +4,11 @@
 
 ## Overview
 
-I published a Grafana dashboard containing the five governed delivery measures. Every panel identified its measure, governing definition, and source path so a viewer could distinguish GitLab-derived delivery activity from webhook-derived incident evidence. The dashboard presented results, while the governance pack documented how each result should be interpreted and challenged.
+I built this measurement system to give a federal delivery leader defensible evidence about software delivery performance across a GitLab deployment pipeline. The decision was not simply whether a metric looked good or bad. It was whether the measured results were trustworthy enough to influence funding, operational priorities, and future delivery controls.
 
-I released the validated evidence package through GitHub as Evidence 1.0. The package included the decision records, validation requirements, source labels, and negative-control evidence supporting the dashboard. Publication froze a reviewable baseline without claiming that future values would remain unchanged. New collection runs could update the measurements, but changes to definitions or source responsibilities required governance review. This approach kept operational reporting connected to a versioned measurement contract and made missing evidence visible instead of allowing an attractive panel to stand without qualification.
+I defined five governed measures: Deployment Frequency, Change Lead Time, Change Failure Rate, Failed Deployment Recovery Time, and Rework Rate. Each measure needed a named source, declared calculation, known limitation, and reversal condition. This prevented the dashboard from presenting numbers without explaining how they were produced. I treated the dashboard as a decision surface backed by a governance contract, not as an independent source of truth. Any funding or performance conclusion still depended on complete GitLab deployment evidence and separately collected incident records.
 
-The architecture is built across **7 phases**, anchored by **Publishing a Governed Five-Measure Delivery Dashboard** on the input side and **Red-Teaming a Measurement Decision** at the end. Each phase is listed in the Implementation section below.
+The architecture is built across **7 phases**, anchored by **Framing the Federal Delivery Decision** on the input side and **Red-Teaming a Measurement Decision** at the end. Each phase is listed in the Implementation section below.
 
 ## Architecture
 
@@ -73,14 +73,14 @@ flowchart LR
         Response{{Governance response: monitor source completeness, reject an unqualified zero}}
     end
 
-    subgraph Release["Evidence 1.0"]
+    subgraph Release["Evidence 1.0, a GitHub release"]
         Package[(Decision records, validation requirements, source labels, negative-control evidence)]
         Frozen{{A reviewable baseline, not a claim that future values hold}}
         Panels[(Every panel names its measure, definition and source path)]
     end
 
-    subgraph RedTeam["The challenge, reported as open"]
-        Ticket(Review request with the release, decisions and a live dashboard view)
+    subgraph RedTeam["The challenge, tracked in Linear and reported as open"]
+        Ticket(Linear review request carrying the release, decisions and a live dashboard view)
         NoResult[(No reviewer result recorded at readout)]
         NotDone{{Assignment and access do not prove a neutral review happened}}
         Trigger(ADR-003 trigger checked: a native incident connector with equal fidelity)
@@ -146,12 +146,12 @@ The diagram shows the topology and data flow of the system as built. The full ar
 
 This system is built across **7 phases**:
 
-1. **Publishing a Governed Five-Measure Delivery Dashboard**
-2. **Connecting Incident Evidence to Deployment Outcomes**
-3. **Establishing Native GitLab Delivery Evidence**
-4. **Defining Defensible Measurement Governance**
-5. **Building the Measurement Workbench**
-6. **Framing the Federal Delivery Decision**
+1. **Framing the Federal Delivery Decision**
+2. **Building the Measurement Workbench**
+3. **Defining Defensible Measurement Governance**
+4. **Establishing Native GitLab Delivery Evidence**
+5. **Connecting Incident Evidence to Deployment Outcomes**
+6. **Publishing a Governed Five-Measure Delivery Dashboard**
 7. **Red-Teaming a Measurement Decision**
 
 For the full walkthrough with screenshots and step-by-step content, see [`documents/governed-dora-delivery-measures.md`](./documents/governed-dora-delivery-measures.md).
@@ -160,10 +160,10 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 Each build phase below is documented in [`documents/governed-dora-delivery-measures.md`](./documents/governed-dora-delivery-measures.md), with screenshots, configuration, and notes as captured during the build:
 
-- ✅ Publishing a Governed Five-Measure Delivery Dashboard
-- ✅ Connecting Incident Evidence to Deployment Outcomes
-- ✅ Establishing Native GitLab Delivery Evidence
-- ✅ Defining Defensible Measurement Governance
-- ✅ Building the Measurement Workbench
 - ✅ Framing the Federal Delivery Decision
+- ✅ Building the Measurement Workbench
+- ✅ Defining Defensible Measurement Governance
+- ✅ Establishing Native GitLab Delivery Evidence
+- ✅ Connecting Incident Evidence to Deployment Outcomes
+- ✅ Publishing a Governed Five-Measure Delivery Dashboard
 - ✅ Red-Teaming a Measurement Decision

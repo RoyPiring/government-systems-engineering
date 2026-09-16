@@ -11,63 +11,13 @@
 
 ![Image](https://nextwork.ai/refreshed_maroon_timid_jujube/uploads/7220c8e7-318e-4d8d-a824-b6b0b4475ff1_w63rz35q)
 
-## Publishing a Governed Five-Measure Delivery Dashboard
+## Framing the Federal Delivery Decision
 
-### Publishing source-labelled delivery measures
+### Defining the service, decision-maker, and governance decision
 
-I published a Grafana dashboard containing the five governed delivery measures. Every panel identified its measure, governing definition, and source path so a viewer could distinguish GitLab-derived delivery activity from webhook-derived incident evidence. The dashboard presented results, while the governance pack documented how each result should be interpreted and challenged.
+I built this measurement system to give a federal delivery leader defensible evidence about software delivery performance across a GitLab deployment pipeline. The decision was not simply whether a metric looked good or bad. It was whether the measured results were trustworthy enough to influence funding, operational priorities, and future delivery controls.
 
-I released the validated evidence package through GitHub as Evidence 1.0. The package included the decision records, validation requirements, source labels, and negative-control evidence supporting the dashboard. Publication froze a reviewable baseline without claiming that future values would remain unchanged. New collection runs could update the measurements, but changes to definitions or source responsibilities required governance review. This approach kept operational reporting connected to a versioned measurement contract and made missing evidence visible instead of allowing an attractive panel to stand without qualification.
-
-### Proving the incident-ingestion negative control
-
-I detached the Incoming Webhook and ran Collect Data while leaving the four production deployments unchanged. DevLake rebuilt the project-scoped relationships without incident input, causing the incident-to-deployment relationship table to become empty. Grafana then reported Change Failure Rate as 0%, making the delivery system appear healthier even though no deployment behavior had changed.
-
-I reattached the webhook, collected again, and confirmed that the incident relationships and original failure rate returned. The before, broken, and restored readings demonstrated causality between the missing source and the false gain. This was a negative control for measurement integrity, not a test of application reliability. It showed that the dashboard could produce a favorable value when a required evidence path disappeared. The governance response was to monitor source completeness and reject unqualified interpretations of a zero rate when incident ingestion had not been verified.
-
-## Connecting Incident Evidence to Deployment Outcomes
-
-### Mapping independent incident records to deployments
-
-I connected an Incoming Webhook to the DevLake project and used it to ingest incident records independently of GitLab. Each incident carried the timestamps and deployment relationship needed to connect an operational failure with a production change. This completed the evidence path required for Change Failure Rate and Failed Deployment Recovery Time.
-
-After ingestion, I ran Collect Data and inspected the project-scoped relationships that DevLake created between incidents and deployments. The stability measures populated only when those links existed. This design kept deployment activity and incident reporting as separate sources, which reduced the risk that a successful deployment record would be mistaken for proof of operational success. It also introduced a dependency that required monitoring: if the webhook stopped sending data, the dashboard could read better than reality. The negative control later tested that exact failure mode and documented the resulting measurement change.
-
-![Image](https://nextwork.ai/refreshed_maroon_timid_jujube/uploads/7220c8e7-318e-4d8d-a824-b6b0b4475ff1_smgdb3oy)
-
-![Image](https://nextwork.ai/refreshed_maroon_timid_jujube/uploads/7220c8e7-318e-4d8d-a824-b6b0b4475ff1_oviza339)
-
-## Establishing Native GitLab Delivery Evidence
-
-### Ingesting commits, merge requests, and production deployments
-
-I created a private GitLab repository as the controlled source for delivery evidence. I seeded commits, merge requests, and production deployment events so DevLake could collect a known activity history. This gave Deployment Frequency and Change Lead Time native records tied to the same repository and deployment process rather than combining unrelated examples from different systems.
-
-I configured the GitLab connection, associated it with the DevLake project, and ran collection before reviewing the transformed data and dashboard results. The seeded history established when changes were committed, reviewed, merged, and deployed to production. It did not create incident evidence because successful deployments and source-control activity could not prove whether a release caused service impairment. The repository therefore supplied the delivery side of the measurement model, while the independent webhook supplied the operational failure and recovery records needed for the stability measures.
-
-![Image](https://nextwork.ai/refreshed_maroon_timid_jujube/uploads/7220c8e7-318e-4d8d-a824-b6b0b4475ff1_b7c1y7lv)
-
-### Recognizing incomplete stability evidence
-
-The GitLab collection populated delivery activity but left the incident-backed measures empty. Change Failure Rate required evidence that a production deployment caused an incident, while Failed Deployment Recovery Time required timestamps showing impairment and restoration. GitLab commits, merge requests, and successful deployment records did not contain those facts in this implementation.
-
-I treated the empty panels as a data-boundary finding rather than a zero failure rate. A zero would have implied that every production change succeeded, while the evidence only showed that the selected source had not supplied incidents. The missing values identified the next required source: Incoming Webhook INCIDENT records linked to the relevant deployments. This distinction protected the dashboard from false certainty. GitLab could prove that delivery occurred and support frequency and lead-time calculations, but it could not independently prove failure, recovery, or the absence of either condition.
-
-## Defining Defensible Measurement Governance
-
-### Creating the five-measure contract and decision records
-
-I created a governance pack that defined the five delivery measures before building their Grafana panels. Each definition named its source systems, calculation boundaries, interpretation limits, validation method, and decision use. This prevented metric definitions from shifting after the results were visible or after a stakeholder challenged an unfavorable number.
-
-I also recorded four Architecture Decision Records covering source selection, incident ingestion, rework classification, and governance handling. Each record included a reversal trigger so the current choice could be replaced when specified evidence or platform capability appeared. The contract separated a measurement definition from its displayed value: a panel could change as new data arrived without silently changing what the metric meant. This structure made the system auditable because a reviewer could trace each number from its panel to its data source, governing decision, and required validation evidence.
-
-### Tracing how missing incidents create a false gain
-
-Change Failure Rate depended on incident records ingested through the Incoming Webhook and linked to production deployments. When that path was disconnected, DevLake still retained the GitLab deployment activity but rebuilt the project relationships without incident input. Failed changes disappeared from the calculation, causing the rate to fall even though delivery performance had not changed.
-
-Assertion 3 made this weakness observable. I recorded the original value, detached the webhook, ran Collect Data, and captured the lower result. I then restored the webhook, collected again, and confirmed that the earlier, less favorable rate returned. The governance pack required timestamped before, broken, and restored measurements. A narrative statement without those values failed the check. This negative control proved that missing incident evidence could make the dashboard look healthier and that a better number did not necessarily represent better delivery.
-
-![Image](https://nextwork.ai/refreshed_maroon_timid_jujube/uploads/7220c8e7-318e-4d8d-a824-b6b0b4475ff1_os0chbnz)
+I defined five governed measures: Deployment Frequency, Change Lead Time, Change Failure Rate, Failed Deployment Recovery Time, and Rework Rate. Each measure needed a named source, declared calculation, known limitation, and reversal condition. This prevented the dashboard from presenting numbers without explaining how they were produced. I treated the dashboard as a decision surface backed by a governance contract, not as an independent source of truth. Any funding or performance conclusion still depended on complete GitLab deployment evidence and separately collected incident records.
 
 ## Building the Measurement Workbench
 
@@ -91,13 +41,63 @@ Both paths were covered by Git ignore rules, so the secret was excluded from rep
 
 ![Image](https://nextwork.ai/refreshed_maroon_timid_jujube/uploads/7220c8e7-318e-4d8d-a824-b6b0b4475ff1_reei3ej2)
 
-## Framing the Federal Delivery Decision
+## Defining Defensible Measurement Governance
 
-### Defining the service, decision-maker, and governance decision
+### Creating the five-measure contract and decision records
 
-I built this measurement system to give a federal delivery leader defensible evidence about software delivery performance across a GitLab deployment pipeline. The decision was not simply whether a metric looked good or bad. It was whether the measured results were trustworthy enough to influence funding, operational priorities, and future delivery controls.
+I created a governance pack that defined the five delivery measures before building their Grafana panels. Each definition named its source systems, calculation boundaries, interpretation limits, validation method, and decision use. This prevented metric definitions from shifting after the results were visible or after a stakeholder challenged an unfavorable number.
 
-I defined five governed measures: Deployment Frequency, Change Lead Time, Change Failure Rate, Failed Deployment Recovery Time, and Rework Rate. Each measure needed a named source, declared calculation, known limitation, and reversal condition. This prevented the dashboard from presenting numbers without explaining how they were produced. I treated the dashboard as a decision surface backed by a governance contract, not as an independent source of truth. Any funding or performance conclusion still depended on complete GitLab deployment evidence and separately collected incident records.
+I also recorded four Architecture Decision Records covering source selection, incident ingestion, rework classification, and governance handling. Each record included a reversal trigger so the current choice could be replaced when specified evidence or platform capability appeared. The contract separated a measurement definition from its displayed value: a panel could change as new data arrived without silently changing what the metric meant. This structure made the system auditable because a reviewer could trace each number from its panel to its data source, governing decision, and required validation evidence.
+
+### Tracing how missing incidents create a false gain
+
+Change Failure Rate depended on incident records ingested through the Incoming Webhook and linked to production deployments. When that path was disconnected, DevLake still retained the GitLab deployment activity but rebuilt the project relationships without incident input. Failed changes disappeared from the calculation, causing the rate to fall even though delivery performance had not changed.
+
+Assertion 3 made this weakness observable. I recorded the original value, detached the webhook, ran Collect Data, and captured the lower result. I then restored the webhook, collected again, and confirmed that the earlier, less favorable rate returned. The governance pack required timestamped before, broken, and restored measurements. A narrative statement without those values failed the check. This negative control proved that missing incident evidence could make the dashboard look healthier and that a better number did not necessarily represent better delivery.
+
+![Image](https://nextwork.ai/refreshed_maroon_timid_jujube/uploads/7220c8e7-318e-4d8d-a824-b6b0b4475ff1_os0chbnz)
+
+## Establishing Native GitLab Delivery Evidence
+
+### Ingesting commits, merge requests, and production deployments
+
+I created a private GitLab repository as the controlled source for delivery evidence. I seeded commits, merge requests, and production deployment events so DevLake could collect a known activity history. This gave Deployment Frequency and Change Lead Time native records tied to the same repository and deployment process rather than combining unrelated examples from different systems.
+
+I configured the GitLab connection, associated it with the DevLake project, and ran collection before reviewing the transformed data and dashboard results. The seeded history established when changes were committed, reviewed, merged, and deployed to production. It did not create incident evidence because successful deployments and source-control activity could not prove whether a release caused service impairment. The repository therefore supplied the delivery side of the measurement model, while the independent webhook supplied the operational failure and recovery records needed for the stability measures.
+
+![Image](https://nextwork.ai/refreshed_maroon_timid_jujube/uploads/7220c8e7-318e-4d8d-a824-b6b0b4475ff1_b7c1y7lv)
+
+### Recognizing incomplete stability evidence
+
+The GitLab collection populated delivery activity but left the incident-backed measures empty. Change Failure Rate required evidence that a production deployment caused an incident, while Failed Deployment Recovery Time required timestamps showing impairment and restoration. GitLab commits, merge requests, and successful deployment records did not contain those facts in this implementation.
+
+I treated the empty panels as a data-boundary finding rather than a zero failure rate. A zero would have implied that every production change succeeded, while the evidence only showed that the selected source had not supplied incidents. The missing values identified the next required source: Incoming Webhook INCIDENT records linked to the relevant deployments. This distinction protected the dashboard from false certainty. GitLab could prove that delivery occurred and support frequency and lead-time calculations, but it could not independently prove failure, recovery, or the absence of either condition.
+
+## Connecting Incident Evidence to Deployment Outcomes
+
+### Mapping independent incident records to deployments
+
+I connected an Incoming Webhook to the DevLake project and used it to ingest incident records independently of GitLab. Each incident carried the timestamps and deployment relationship needed to connect an operational failure with a production change. This completed the evidence path required for Change Failure Rate and Failed Deployment Recovery Time.
+
+After ingestion, I ran Collect Data and inspected the project-scoped relationships that DevLake created between incidents and deployments. The stability measures populated only when those links existed. This design kept deployment activity and incident reporting as separate sources, which reduced the risk that a successful deployment record would be mistaken for proof of operational success. It also introduced a dependency that required monitoring: if the webhook stopped sending data, the dashboard could read better than reality. The negative control later tested that exact failure mode and documented the resulting measurement change.
+
+![Image](https://nextwork.ai/refreshed_maroon_timid_jujube/uploads/7220c8e7-318e-4d8d-a824-b6b0b4475ff1_smgdb3oy)
+
+![Image](https://nextwork.ai/refreshed_maroon_timid_jujube/uploads/7220c8e7-318e-4d8d-a824-b6b0b4475ff1_oviza339)
+
+## Publishing a Governed Five-Measure Delivery Dashboard
+
+### Publishing source-labelled delivery measures
+
+I published a Grafana dashboard containing the five governed delivery measures. Every panel identified its measure, governing definition, and source path so a viewer could distinguish GitLab-derived delivery activity from webhook-derived incident evidence. The dashboard presented results, while the governance pack documented how each result should be interpreted and challenged.
+
+I released the validated evidence package through GitHub as Evidence 1.0. The package included the decision records, validation requirements, source labels, and negative-control evidence supporting the dashboard. Publication froze a reviewable baseline without claiming that future values would remain unchanged. New collection runs could update the measurements, but changes to definitions or source responsibilities required governance review. This approach kept operational reporting connected to a versioned measurement contract and made missing evidence visible instead of allowing an attractive panel to stand without qualification.
+
+### Proving the incident-ingestion negative control
+
+I detached the Incoming Webhook and ran Collect Data while leaving the four production deployments unchanged. DevLake rebuilt the project-scoped relationships without incident input, causing the incident-to-deployment relationship table to become empty. Grafana then reported Change Failure Rate as 0%, making the delivery system appear healthier even though no deployment behavior had changed.
+
+I reattached the webhook, collected again, and confirmed that the incident relationships and original failure rate returned. The before, broken, and restored readings demonstrated causality between the missing source and the false gain. This was a negative control for measurement integrity, not a test of application reliability. It showed that the dashboard could produce a favorable value when a required evidence path disappeared. The governance response was to monitor source completeness and reject unqualified interpretations of a zero rate when incident ingestion had not been verified.
 
 ## Red-Teaming a Measurement Decision
 
