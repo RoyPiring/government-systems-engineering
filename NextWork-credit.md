@@ -10,6 +10,7 @@ This portfolio repository was built from NextWork projects, created via NextWork
 - Container Hardening Compliance Pipeline
 - FedRAMP Landing Zone on Azure
 - GitOps Dev Zone Bootstrap with Argo CD
+- Govern DORA Metrics with DevLake
 - Simulate a JWCC Multi-Cloud Authorization
 - Multi-Cloud GovRAMP Modernization Lab
 - Zero-Cost Federal Platform Rehearsal Rig

@@ -1,7 +1,7 @@
 lens: government-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-09-13'
+scored_at: '2026-09-15'
 human_pin: []
 systems:
 - slug: jwcc-multi-cloud-authorization
@@ -206,6 +206,59 @@ systems:
       proof and drift evidence files are in the peer systems.'
   average: 8.0
   rationale: Container hardening where a fixed 30-rule denominator makes the 7-to-1 reduction attributable
+  featured: false
+- slug: governed-dora-delivery-measures
+  axis_scores:
+    technical_depth: 7
+    voice: 8
+    validation: 7
+  axis_reasoning:
+    technical_depth: 'The 45-edge diagram sits sixth in the lens by density, behind the 47-edge rehearsal
+      rig and ahead of the 34-edge enclave, and it teaches rather than decorates: the negative control
+      is drawn as its own subgraph with before, broken, and restored readings, the empty stability panels
+      are drawn as a data-boundary finding that names the next required source, the unrecorded review
+      and the tested ADR-003 trigger are first-class nodes, and the git-ignored 128-character ENCRYPTION_SECRET
+      appears as a component. Decision-record discipline is the strongest in the lens: four ADRs each
+      carry a reversal trigger and one trigger is checked against the live configuration, which is the
+      reversal-condition habit the prior pass held the compliance bundle for lacking. The system itself
+      belongs with the CDC harness, container hardening, and the compliance bundle at 7 rather than with
+      the peers at 8: a Docker Compose stack of Apache DevLake, Grafana, and their databases on one Windows
+      workstation, a local GitLab CE 19.3.1 project seeded with four production deployments, one Incoming
+      Webhook, and a roughly 90-minute build with no cluster, no authorization boundary, no federal accounts,
+      and no control tailoring. Rework Rate, the fifth governed measure, never appears in the build beyond
+      its definition and its ADR, and the README lists the seven phases in reverse build order, so Publishing
+      is named as the input anchor when it is the output.'
+    voice: 'First person carries ownership at the highest count in the lens (33 uses of I across 2,387
+      words, ahead of the CDC harness at 29) and every phase closes on what the result did not prove:
+      the negative control is a test of measurement integrity and not of application reliability, access
+      checks are readiness evidence and not proof that each source held complete data, the duplicate secret
+      copy is not an enterprise secret-management design, and assignment and access do not prove a neutral
+      reviewer performed the challenge. Headings are specific (Tracing how missing incidents create a
+      false gain; Recognizing incomplete stability evidence), no What this step accomplishes scaffold
+      appears, no banned verbs and no dash-family characters appear in the README or the source doc, and
+      the hardest-part section names a discipline (coordinating the independent review without contaminating
+      it). On prose alone this sits with the peers at 9. It is held to 8 by a defect no peer carries:
+      three paragraphs in the source doc break off before their final word or period (stand wi, stability
+      measure, condit), and the first of them is the closing sentence of the README Overview, so the first
+      block every visitor reads stops before its point lands. Restoring those three sentences would return
+      the prose to 9.'
+    validation: 'The negative control is the strongest phase and it is built as a controlled before, broken,
+      and restored sequence with one variable: the Incoming Webhook is detached while the four production
+      deployments stay untouched, Collect Data is rerun, the relationship table empties and Change Failure
+      Rate reads 0 percent, then the webhook is reattached and the original rate returns. Evidence artifacts
+      are named by path in the way the peers at 8 were held for lacking: governance/decisions.md, governance/validation.md,
+      the Evidence 1.0 GitHub release, Linear item PS-160, and secrets/devlake-encryption-secret.txt.
+      The red-team phase adds a real trigger test (ADR-003 checked against the live configuration, verdict
+      Accept) and reports the independent review as open rather than complete. It is held at 7, level
+      with the GovRAMP lab, because the headline evidence stays unquantified in prose: the original failure
+      rate, the restored rate, and the timestamps that the governance pack itself says a passing check
+      requires are never stated, so the only measured value in 2,387 words is the broken-state 0 percent;
+      Deployment Frequency, Change Lead Time, and Recovery Time never receive a value, Rework Rate is
+      never measured, and the review phase ships with no recorded result. Each system scored 8 shows at
+      least one concrete before-and-after pair or digest (7 failures to 1 on a fixed 30-rule denominator,
+      2,120 rows against 80, a full SHA-256) and this one does not.'
+  rationale: Governed DORA measures where a detached incident webhook fakes a 0% failure rate on purpose
+  average: 7.33
   featured: false
 - slug: multi-cloud-govramp-lab
   axis_scores:

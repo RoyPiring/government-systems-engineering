@@ -17,3 +17,4 @@ Cloud systems engineered for federal-grade security and compliance.
 | 7 | [Container Hardening Compliance Pipeline](./systems/container-hardening-pipeline/) | 2026-09-08 | 2026-09-08 | BEFORE · Dual-Gate |
 | 8 | [CDC Consumer Correctness Harness](./systems/cdc-consumer-correctness-harness/) | 2026-09-12 | 2026-09-12 | Proving That the Wrong Answer Can Look Right |
 | 9 | [Compliance Evidence Bundle Pipeline](./systems/compliance-evidence-bundle/) | 2026-09-13 | 2026-09-13 | Contract-Enforced · Content-Addressed |
+| 10 | [Govern DORA Metrics with DevLake](./systems/governed-dora-delivery-measures/) | 2026-09-15 | 2026-09-15 | DORA · DevLake · Five-Measure · GitLab |
