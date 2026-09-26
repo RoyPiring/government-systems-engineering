@@ -4,6 +4,7 @@ This portfolio repository was built from NextWork projects, created via NextWork
 
 **Original NextWork projects:**
 
+- Survive the Cutover, Then Redesign
 - CDC Consumer Correctness Harness
 - The Enclave That Could Not Connect
 - Compliance Evidence Bundle Pipeline

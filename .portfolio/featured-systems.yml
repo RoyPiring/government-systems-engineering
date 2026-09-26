@@ -1,7 +1,7 @@
 lens: government-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-09-15'
+scored_at: '2026-09-26'
 human_pin: []
 systems:
 - slug: jwcc-multi-cloud-authorization
@@ -22,6 +22,40 @@ systems:
       with the RPO honestly labeled a 15-minute design target rather than a live lag measurement.'
   average: 9.33
   rationale: Boundary-first multi-cloud authorization proving portability and a 4.67-minute failover
+  featured: true
+- slug: byte-parity-cutover-rehearsal
+  axis_scores:
+    technical_depth: 8
+    voice: 9
+    validation: 9
+  axis_reasoning:
+    technical_depth: 'A four-service Docker Compose delivery lab, GitLab with its runner against a Jenkins
+      stand-in, with diffoscope as an independent comparison and one accepted three-stage wrapper called
+      from the repository by both paths so two pipeline files cannot drift while appearing equivalent.
+      The toolchain is frozen in evidence to named versions, Go 1.27.1, GNU tar 1.35, diffoscope 240,
+      GitLab Runner 17.11.0, so a changed digest cannot be blamed on an unknown compiler, and packaging
+      uses four deterministic tar rules with the trimpath flag as the one variable under test. The 49-edge
+      diagram sits in the lens top band. Held at 8 rather than 9 because the workload under migration is
+      a synthetic greeting program and the lab is explicitly local, not production scale.'
+    voice: 'The register is the brand: 26 uses of I across 2,082 words, and the limits stated harder than
+      the results. Equal bytes prove identical archive contents, not that the two systems match on
+      permissions, scheduling, logs or recovery. Git supports the ordering claim while an authorized owner
+      could still rewrite history. The lab is not production scale, availability or security, and is not
+      a promise another host reproduces it. The closing phase retires the contract the build just
+      satisfied and says why: byte equality served preservation and cannot judge an intentional behavior
+      change, so the redesign gets a behavioral test rather than an exception added to the migration gate
+      after results were visible.'
+    validation: 'A negative control run before any passing claim, which is the strongest evidence shape in
+      the lens: the GitLab path omitted the trimpath flag, the digests differed, diffoscope reported 274
+      hunks, and every hunk was attributed to that one omission, recorded as EXPECTED_RED with
+      UNEXPLAINED_COUNT=0 and never reported as a pass. Only then was the wrapper restored, both paths
+      produced the same digest with only the runner changed, and the oracle recorded VERDICT=PASS with
+      UNEXPLAINED_COUNT=0. The design baseline was merged to main before either path ran and its commit
+      recorded in evidence, so the acceptance criteria provably predate the outputs, and the tracker work
+      closed only after parity passed. The redesign branch then demonstrates the replacement contract by
+      executing the binary rather than comparing bytes.'
+  average: 8.67
+  rationale: A negative control explained all 274 hunks before equal digests were allowed to mean parity
   featured: true
 - slug: gitops-dev-zone-bootstrap
   axis_scores:
@@ -139,7 +173,7 @@ systems:
       by reader proximity.'
   average: 8.0
   rationale: Contract-first evidence bundle, publish gate proven to refuse, two stubbed slots kept visible
-  featured: true
+  featured: false
 - slug: cdc-consumer-correctness-harness
   axis_scores:
     technical_depth: 7

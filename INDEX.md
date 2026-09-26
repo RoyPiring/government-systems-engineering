@@ -18,3 +18,4 @@ Cloud systems engineered for federal-grade security and compliance.
 | 8 | [CDC Consumer Correctness Harness](./systems/cdc-consumer-correctness-harness/) | 2026-09-12 | 2026-09-12 | Proving That the Wrong Answer Can Look Right |
 | 9 | [Compliance Evidence Bundle Pipeline](./systems/compliance-evidence-bundle/) | 2026-09-13 | 2026-09-13 | Contract-Enforced · Content-Addressed |
 | 10 | [Govern DORA Metrics with DevLake](./systems/governed-dora-delivery-measures/) | 2026-09-15 | 2026-09-15 | DORA · DevLake · GitLab · Five-Measure |
+| 11 | [Survive the Cutover, Then Redesign](./systems/byte-parity-cutover-rehearsal/) | 2026-09-26 | 2026-09-26 | GitLab CI · Jenkins · SHA-256 · diffoscope |
