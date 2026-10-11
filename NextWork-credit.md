@@ -9,6 +9,7 @@ This portfolio repository was built from NextWork projects, created via NextWork
 - The Enclave That Could Not Connect
 - Compliance Evidence Bundle Pipeline
 - Container Hardening Compliance Pipeline
+- Contract-First Go API Delivery
 - FedRAMP Landing Zone on Azure
 - GitOps Dev Zone Bootstrap with Argo CD
 - Govern DORA Metrics with DevLake

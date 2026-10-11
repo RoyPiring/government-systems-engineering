@@ -1,7 +1,7 @@
 lens: government-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-09-26'
+scored_at: '2026-10-10'
 human_pin: []
 systems:
 - slug: jwcc-multi-cloud-authorization
@@ -22,6 +22,42 @@ systems:
       with the RPO honestly labeled a 15-minute design target rather than a live lag measurement.'
   average: 9.33
   rationale: Boundary-first multi-cloud authorization proving portability and a 4.67-minute failover
+  featured: true
+- slug: contract-gate-go-delivery
+  axis_scores:
+    technical_depth: 9
+    voice: 9
+    validation: 8
+  axis_reasoning:
+    technical_depth: 'Five controls stack on one Go records service rather than one control demonstrated
+      once: an OpenAPI document covering two approved paths, validated standalone with kin-openapi
+      v0.149.0; deterministic synthetic models matching those schemas so a failure is attributable to
+      routing, serialization, schema or configuration rather than to changing data; a startup boundary
+      that reads LISTEN_ADDR before constructing the server and stops at exit code 78 rather than
+      selecting a default; a bidirectional route gate that also validates response bodies; and
+      table-driven normalization that folds four placeholder forms, the regex form included, onto one
+      route key. The release path adds OIDC federation to Amazon ECR with a shell-free image and a
+      digest-addressed identity, and the toolchain is pinned at Go 1.27.1 and kin-openapi v0.149.0.'
+    voice: 'The register separates prepared controls from completed results and holds that line to the
+      end. The publishing job is reported as rehearsed and not run, and the six artifacts it would have
+      produced are named as absent rather than summarized away: image digest, publish output, GitLab
+      identity evidence, scan result, deletion proof, and the three not-found read-backs. The teardown
+      file is refused as proof of cleanup because it held only an earlier missing-repository error, which
+      is a harder call than reporting it as done. The OIDC claim is explicitly limited to describing how
+      credentials would be obtained. Nothing planned is dressed as measured.'
+    validation: 'The protections are proven by failures that were made to happen and retained, one per
+      direction: GET /v1/records/{} kept in the contract with its registration removed, GET /v1/debug
+      registered and never documented, and /status returning a number where the contract requires a
+      string, which shows route parity alone cannot satisfy the interface. Absence is evidenced too:
+      commit 1c731c2 holds the module, ignore rules, evidence index and seven design documents while
+      demonstrably holding no openapi.yaml, no internal/handlers and no cmd/recordsvc, and the validator
+      passed while no handler package existed, so service behavior could not have influenced it.
+      evidence/config-exit.txt records the named variable and exit_status=78. Docked one point because
+      the evidence chain stops short of the boundary the build set for itself: the publish and teardown
+      half carries no run evidence at all, so half the declared delivery path is designed and not
+      demonstrated.'
+  average: 8.67
+  rationale: Route parity proven both ways by three retained failures, the unrun publish half unclaimed
   featured: true
 - slug: byte-parity-cutover-rehearsal
   axis_scores:
@@ -123,7 +159,7 @@ systems:
   average: 8.33
   rationale: Zero-cost local rehearsal of a federal delivery path, bounded by a map of what it cannot
     prove
-  featured: true
+  featured: false
 - slug: compliance-evidence-bundle
   axis_scores:
     technical_depth: 7
