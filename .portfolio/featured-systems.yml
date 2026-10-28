@@ -171,7 +171,7 @@ systems:
       rules and separation-of-duty checks in that one place, so the promotion command and the printed
       table cannot develop different readings of the same road. Two validators were added behind an
       existing command surface that already lints, checks and renders, and all thirteen supplied starter
-      files were preserved unchanged. Held at 7, level with compliance-evidence-bundle and the
+      files were preserved unchanged. Held at 7, level with compliance-evidence-bundle, the CDC consumer harness and the
       container-hardening pipeline, because the implementation is two functions and a map rather than the
       multi-cloud authorization work that carries this lens at 9 and 10.'
     voice: 'The restraint is the strongest thing here. The local pipeline was never run in the observed
