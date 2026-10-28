@@ -15,6 +15,7 @@ This portfolio repository was built from NextWork projects, created via NextWork
 - Govern DORA Metrics with DevLake
 - Simulate a JWCC Multi-Cloud Authorization
 - Multi-Cloud GovRAMP Modernization Lab
+- Build Policy-as-Code Promotion Gates
 - Zero-Cost Federal Platform Rehearsal Rig
 
 ## About NextWork

@@ -1,6 +1,6 @@
 # Government Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-12-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--10--10-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-13-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--10--27-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *What works under federal regulatory scrutiny?*
 
@@ -29,6 +29,6 @@ Cloud, security, and platform engineering for the public sector and regulated en
 - **[GitOps Dev Zone Bootstrap with Argo CD](./systems/gitops-dev-zone-bootstrap/)**: GitOps path proving drift detection and correction are separate, 5 replicas back to 1 in 6 seconds
 - **[The Enclave That Could Not Connect](./systems/closed-enclave-connection-authorization/)**: Closed SECRET enclave that proves its boundary before it connects, injected finding driven to zero
 
-_+ 7 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
+_+ 8 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
 
 

@@ -1,7 +1,7 @@
 lens: government-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-10-10'
+scored_at: '2026-10-27'
 human_pin: []
 systems:
 - slug: jwcc-multi-cloud-authorization
@@ -159,6 +159,42 @@ systems:
   average: 8.33
   rationale: Zero-cost local rehearsal of a federal delivery path, bounded by a map of what it cannot
     prove
+  featured: false
+- slug: policy-gated-promotion-road
+  axis_scores:
+    technical_depth: 7
+    voice: 9
+    validation: 8
+  axis_reasoning:
+    technical_depth: 'Modest code carrying one strong structural rule. Five environments become an ordered
+      map rather than informal labels, and each rung holds its required evidence, allowed data, approval
+      rules and separation-of-duty checks in that one place, so the promotion command and the printed
+      table cannot develop different readings of the same road. Two validators were added behind an
+      existing command surface that already lints, checks and renders, and all thirteen supplied starter
+      files were preserved unchanged. Held at 7, level with compliance-evidence-bundle and the
+      container-hardening pipeline, because the implementation is two functions and a map rather than the
+      multi-cloud authorization work that carries this lens at 9 and 10.'
+    voice: 'The restraint is the strongest thing here. The local pipeline was never run in the observed
+      session, so both readouts and the private v1.0.0 release say NOT REHEARSED instead of implying that
+      delivery activity nobody watched had taken place, which is a harder line to hold at release time
+      than to describe afterwards. The before-state is recorded so the finished work cannot claim code
+      that arrived in the starter bundle. The hard part is named as preserving thirteen files while two
+      new validators compiled against their existing types. The stated next step is to connect
+      authenticated approval events rather than keep trusting names typed into a request file, which
+      concedes the current weakness rather than defending it.'
+    validation: 'Broad for its size. Every permitted one-rung move was exercised rather than one
+      successful example, and five refusals were required to fire: skipping a rung, real data on the test
+      rung, a manual gate with no approver, the production initiator approving their own move, and the
+      change-board chair omitted. Each output names the environment, the evidence item or the person, so
+      an operator can correct the request instead of reading an unexplained rejection. The production case
+      is the sharpest, reporting the separation-of-duty conflict and the missing board role in the same
+      run so one approval problem could not mask the other. The branch was merged and the ticket closed
+      only after that evidence existed. A narrower evidence failure was then proven on a copy of an
+      already-shipped request with one item removed, and the original was rerun to show the released
+      source and its accepted outcome were untouched. Held at 8 because the pipeline half of the chain
+      carries no run evidence at all, which the handover states rather than hides.'
+  average: 8.0
+  rationale: Five refusals fired, and the production case named the duty conflict and the missing chair
   featured: false
 - slug: compliance-evidence-bundle
   axis_scores:

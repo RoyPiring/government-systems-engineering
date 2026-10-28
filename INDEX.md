@@ -20,3 +20,4 @@ Cloud systems engineered for federal-grade security and compliance.
 | 10 | [Govern DORA Metrics with DevLake](./systems/governed-dora-delivery-measures/) | 2026-09-15 | 2026-09-15 | DORA · DevLake · GitLab · Five-Measure |
 | 11 | [Survive the Cutover, Then Redesign](./systems/byte-parity-cutover-rehearsal/) | 2026-09-26 | 2026-09-26 | GitLab CI · Jenkins · SHA-256 · diffoscope |
 | 12 | [Contract-First Go API Delivery](./systems/contract-gate-go-delivery/) | 2026-10-10 | 2026-10-10 | Go · OpenAPI · Bidirectional Route Gate · Exit 78 · Unrun OIDC Publish |
+| 13 | [Build Policy-as-Code Promotion Gates](./systems/policy-gated-promotion-road/) | 2026-10-27 | 2026-10-27 | Go · Five Rungs · Separation of Duty · NOT REHEARSED |
