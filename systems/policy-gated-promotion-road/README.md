@@ -23,7 +23,7 @@ flowchart TD
     classDef event fill:#7B42BC,stroke:#F4D03F,stroke-width:2px,color:#FFFFFF
     classDef io fill:#0d1117,stroke:#F4D03F,stroke-width:1.5px,color:#F4D03F,font-style:italic
 
-    Board[/The change board and the Information System Security Officer, who have to reproduce a promotion decision without having attended the meeting/]
+    Board[/The delivery engineers, the security officer and the change board, who judge every move against one written policy rather than a rule somebody recalls in a meeting/]
     Authenticated[/The real change-management system, not yet connected, which would record authenticated approval events instead of names typed into a request file/]
 
     subgraph Why["The failure mode the road replaces"]
@@ -47,7 +47,7 @@ flowchart TD
         PerRung[("Each rung carrying its required evidence, allowed data, approval rules and separation-of-duty checks in one structure")]
         OnePlace{{Keeping the requirements in a single map stops the command and the printed table developing different readings of the same road}}
         Lint[("lint reporting PASS lint: 5 rungs, with the supplied renderer printing one row per rung")]
-        Surface{{One surface lints the map, checks a request and renders the road, so people read the table while automation evaluates the same definitions}}
+        Surface{{One surface lints the map, checks a request and renders the road, so people read the table while automation could evaluate the same definitions}}
         Preserved[("The thirteen supplied files unchanged, with the two validators added beside them")]
     end
 
@@ -88,7 +88,7 @@ flowchart TD
         Refused[("The promotion command refusing the copy for the missing required item")]
         Reran[("The temporary file deleted and the original request rerun, still passing")]
         Item{{Refusing on one absent item shows the validator checks evidence requirements individually, and not merely that a source and destination are valid}}
-        Fidelity{{Running the experiment on a copy is what proves the released source and its accepted outcome were never altered}}
+        Fidelity{{Running the experiment on a copy, then rerunning the original, is what showed the released source and its accepted outcome unaltered by it}}
     end
 
     subgraph Cost["Time and the hard part"]
@@ -147,8 +147,8 @@ flowchart TD
     NotRehearsed -- "leaves" --> NextTime
     Declared -- "read by" --> Board
     Restraint -- "read by" --> Board
-    Item -- "still trusts names in a file, which needs" --> Authenticated
-    BothAtOnce -- "would be stronger against" --> Authenticated
+    Declared -- "rests on names typed into a request file, which is what needs" --> Authenticated
+    BothAtOnce -- "checks who approved by name only, so it awaits" --> Authenticated
 
     class Thirteen,Failed,PerRung,Lint,Preserved,Moves,Skip,RealData,NoApprover,SelfApprove,NoChair,Closed,Readouts,Apart,NotRehearsed,Matched,Refused,Reran,Clock datastore
     class Inspect,Road,Four,Both,Copy service
